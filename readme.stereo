@@ -1,0 +1,58 @@
+Intro
+-----
+These are macros for vi which produce text stereograms.  I wrote them a
+couple of years ago (while bored), and didn't comment them at all.
+Consequently, I can't remember how they work, so don't even ask!
+
+They have been tested with `vim' and `elvis' and seem to work okay...  i
+don't know about other version of the editor.
+
+Quick start
+-----------
+type the following:
+   vi sample
+   :so .exrc
+   g   (then wait....)   z
+
+Usage
+-----
+There's a sample file called `sample' - the macros are rather fussy about how
+this source file is arranged.
+
+The pattern to turn into a stereogram is held in the first 25 lines, made up
+of asterisks and spaces.  It is not necessary for all lines to be 80
+characters wide - indeed, it is permitted to have blank lines here.
+
+Line 26 contains a row of `=' signs - this should not be changed (I can't
+remember why)
+
+Lines 28 to 53 contain random characters - this is where the stereogram is
+generated.  these lines, too, shouldn't be altered.
+
+press `g' to start the macro.  when it stops, press `z' to clean away
+left-over garbage.
+
+(the result of using these macros on `sample' is shown in the file `result' -
+i don't recommend trying to view it in a small font (such as in an x-window))
+
+Little things to note
+---------------------
+ o  it seems that `|' has a special function in macros - to use the standard
+    vi `|' command it needs to be escaped with `^V|'
+ o  the recursive part of the code has a trailing `0', so vi doesn't barf at
+    the idea of recursion
+
+Future - i might need some encouragement with these!
+------
+ o  would be nice to not have to do the clean-up command seperately (`z'),
+    but i don't know how to make the recursive macro terminate cleanly - so
+    the whole thing stops with a `not found' error.
+ o  i've started work on multiple-layer stereograms, as this version will
+    only make pictures with two layers (boo!)
+ o  i wrote it through a vt220 terminal, so it's pretty much geared to a
+    80x25 display - this might change in the future
+
+
+    Comments and suggestions are welcome!
+    cheers - matthew flint, 27th July 1997  (matthew@philtrum.demon.co.uk)
+
